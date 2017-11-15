@@ -1,0 +1,22 @@
+<odoo>
+  <data>
+    <template id="inherit_external_layout_background" inherit_id="web.external_layout_standard">
+      <xpath expr="//div[@class='header']//div[@class='row']//div[@class='col-xs-3 mb4']//img" position="replace">
+        <div class="col-xs-3 mb4">
+          <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" width="100" height="65"/>
+        </div>
+      </xpath>
+      <xpath expr="//div[@class='header']//div[@class='row']//div[@name='company_address']" position="replace">
+        <div class="col-xs-6" name="company_address">
+          <span t-field="company.partner_id.name" style="font-size: 20px !important; font-weight: bold;"/><br/>
+          <span t-field="company.partner_id"
+              t-field-options='{"widget": "contact", "fields": ["address"], "no_marker": true}'
+              style="border-bottom: 1px solid gray; display:inline-block; font-size: 18px !important;"/>
+        </div>
+      </xpath>
+      <xpath expr="//div[@class='footer']//div[@class='text-center']//ul[@class='list-inline mb4']//li[3]" position="after">
+        <li><i class="fa fa-globe"/> <span>RS Computer Systems</span></li>
+      </xpath>
+    </template>
+  </data>
+</odoo>

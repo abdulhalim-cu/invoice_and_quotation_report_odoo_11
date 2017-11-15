@@ -1,0 +1,11 @@
+<odoo>
+  <data>
+    <template id="inherit_report_saleorder_document" inherit_id="sale.report_saleorder_document">
+      <xpath expr="//t[@t-name='sale.report_saleorder_document']//t[@t-call='web.external_layout']//t[@t-set='doc']"
+             position="before">
+        <br/>
+        <br/>
+      </xpath>
+    </template>
+  </data>
+</odoo>
